@@ -5,7 +5,7 @@ import 'package:pagination_view/pagination_view.dart';
 import 'package:http/http.dart' as http;
 
 import '/model/news.dart';
-import '/ui/news_row.dart';
+import '/ui/molecule/news_row.dart';
 
 class NewsList extends StatefulWidget {
   const NewsList({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_news/ui/news_list.dart';
+import '/ui/organism/news_list.dart';
 
 void main() {
   runApp(const MyApp());

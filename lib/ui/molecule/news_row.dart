@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_news/ui/atom/author_label.dart';
 
 import '/model/news.dart';
+
+import '/ui/atom/author_label.dart';
+import '/ui/atom/stats_label.dart';
 
 class NewsRow extends StatelessWidget {
   const NewsRow({super.key, required this.news});
@@ -24,14 +28,11 @@ class NewsRow extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               const SizedBox(height: 4.0),
-              Text(
-                'by @${news.author}',
-                style: Theme.of(context).textTheme.subtitle2,
-              ),
+              AuthorLabel(username: news.author),
               const SizedBox(height: 8.0),
-              Text(
-                '${news.points} points • ${news.comments} comments',
-                style: Theme.of(context).textTheme.caption,
+              StatsLabel(
+                pointsCount: news.points,
+                commentsCount: news.comments,
               ),
             ],
           ),
