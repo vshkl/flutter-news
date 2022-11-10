@@ -12,14 +12,14 @@ class NewsList extends StatefulWidget {
 }
 
 class _NewsListState extends State<NewsList> {
-  final _news = <News>[
-    const News(
-        title: 'Flutter 1.0', author: 'flutter', points: 100, comments: 110),
-    const News(
-        title: 'Flutter 2.0', author: 'flutter', points: 200, comments: 120),
-    const News(
-        title: 'Flutter 3.0', author: 'flutter', points: 300, comments: 130),
-  ];
+  final _news = List<News>.generate(
+    10000,
+    ((index) => News(
+        title: 'Flutter 4.0',
+        author: 'user${index + 1}name',
+        points: index + 1,
+        comments: index + 1)),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -27,13 +27,7 @@ class _NewsListState extends State<NewsList> {
       padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
       itemCount: _news.length,
       itemBuilder: (context, index) {
-        final news = _news[index];
-        return NewsRow(
-          title: news.title,
-          author: news.author,
-          points: news.points,
-          comments: news.comments,
-        );
+        return NewsRow(news: _news[index]);
       },
       separatorBuilder: (context, index) {
         return const SizedBox(height: 8.0);
