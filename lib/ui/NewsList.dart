@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'model/News.dart';
+import '/model/News.dart';
 
 import 'NewsRow.dart';
 

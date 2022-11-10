@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'NewsList.dart';
+import 'ui/NewsList.dart';
 
 void main() {
   runApp(const MyApp());
