@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '/model/News.dart';
+import '/model/news.dart';
 
 class NewsRow extends StatelessWidget {
   const NewsRow({super.key, required this.news});
