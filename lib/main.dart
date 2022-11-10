@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '/ui/organism/news_list.dart';
+import '/ui/screen/news_list_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,23 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      home: const NewsScreen(),
-    );
-  }
-}
-
-class NewsScreen extends StatelessWidget {
-  const NewsScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Flutter News'),
-      ),
-      body: const Center(
-        child: NewsList(),
-      ),
+      home: const NewsListScreen(),
     );
   }
 }
