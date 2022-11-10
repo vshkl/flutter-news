@@ -9,8 +9,7 @@ class NewsRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
+    return Wrap(
       children: [
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -19,11 +18,12 @@ class NewsRow extends StatelessWidget {
               news.title,
               style: Theme.of(context).textTheme.titleLarge,
             ),
+            const SizedBox(height: 4.0),
             Text(
               'by @${news.author}',
               style: Theme.of(context).textTheme.subtitle2,
             ),
-            const SizedBox(height: 4.0),
+            const SizedBox(height: 8.0),
             Text(
               '${news.points} points • ${news.comments} comments',
               style: Theme.of(context).textTheme.caption,
