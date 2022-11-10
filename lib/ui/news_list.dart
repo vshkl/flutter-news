@@ -5,7 +5,7 @@ import 'package:pagination_view/pagination_view.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:flutter_news/model/News.dart';
-import 'package:flutter_news/ui/NewsRow.dart';
+import 'package:flutter_news/ui/news_row.dart';
 
 class NewsList extends StatefulWidget {
   const NewsList({super.key});
