@@ -9,7 +9,7 @@ class News with _$News {
       {required String title,
       required String author,
       required int points,
-      required int comments}) = _News;
+      @JsonKey(name: 'num_comments') required int comments}) = _News;
 
-  factory News.fromJson(Map<String, Object?> json) => _$NewsFromJson(json);
+  factory News.fromJson(Map<String, dynamic> json) => _$NewsFromJson(json);
 }

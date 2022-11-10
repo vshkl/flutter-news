@@ -23,6 +23,7 @@ mixin _$News {
   String get title => throw _privateConstructorUsedError;
   String get author => throw _privateConstructorUsedError;
   int get points => throw _privateConstructorUsedError;
+  @JsonKey(name: 'num_comments')
   int get comments => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -35,7 +36,11 @@ abstract class $NewsCopyWith<$Res> {
   factory $NewsCopyWith(News value, $Res Function(News) then) =
       _$NewsCopyWithImpl<$Res, News>;
   @useResult
-  $Res call({String title, String author, int points, int comments});
+  $Res call(
+      {String title,
+      String author,
+      int points,
+      @JsonKey(name: 'num_comments') int comments});
 }
 
 /// @nodoc
@@ -83,7 +88,11 @@ abstract class _$$_NewsCopyWith<$Res> implements $NewsCopyWith<$Res> {
       __$$_NewsCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String title, String author, int points, int comments});
+  $Res call(
+      {String title,
+      String author,
+      int points,
+      @JsonKey(name: 'num_comments') int comments});
 }
 
 /// @nodoc
@@ -128,7 +137,7 @@ class _$_News implements _News {
       {required this.title,
       required this.author,
       required this.points,
-      required this.comments});
+      @JsonKey(name: 'num_comments') required this.comments});
 
   factory _$_News.fromJson(Map<String, dynamic> json) => _$$_NewsFromJson(json);
 
@@ -139,6 +148,7 @@ class _$_News implements _News {
   @override
   final int points;
   @override
+  @JsonKey(name: 'num_comments')
   final int comments;
 
   @override
@@ -181,7 +191,7 @@ abstract class _News implements News {
       {required final String title,
       required final String author,
       required final int points,
-      required final int comments}) = _$_News;
+      @JsonKey(name: 'num_comments') required final int comments}) = _$_News;
 
   factory _News.fromJson(Map<String, dynamic> json) = _$_News.fromJson;
 
@@ -192,6 +202,7 @@ abstract class _News implements News {
   @override
   int get points;
   @override
+  @JsonKey(name: 'num_comments')
   int get comments;
   @override
   @JsonKey(ignore: true)
