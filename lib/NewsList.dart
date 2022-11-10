@@ -1,6 +1,6 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
-import 'News.dart';
+import 'model/News.dart';
 
 import 'NewsRow.dart';
 
@@ -14,15 +14,17 @@ class NewsList extends StatefulWidget {
 class _NewsListState extends State<NewsList> {
   final _news = <News>[
     const News(
-        title: 'Flutter 2.0',
-        author: 'Flutter Team',
-        points: 100,
-        comments: 10),
+        title: 'Flutter 1.0', author: 'flutter', points: 100, comments: 110),
+    const News(
+        title: 'Flutter 2.0', author: 'flutter', points: 200, comments: 120),
+    const News(
+        title: 'Flutter 3.0', author: 'flutter', points: 300, comments: 130),
   ];
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return ListView.separated(
+      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
       itemCount: _news.length,
       itemBuilder: (context, index) {
         final news = _news[index];
@@ -32,6 +34,9 @@ class _NewsListState extends State<NewsList> {
           points: news.points,
           comments: news.comments,
         );
+      },
+      separatorBuilder: (context, index) {
+        return const SizedBox(height: 8.0);
       },
     );
   }

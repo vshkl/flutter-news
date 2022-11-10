@@ -16,16 +16,23 @@ class NewsRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(title),
-            Text('by @$author'),
-            Row(
-              children: [
-                Text('$points points'),
-                Text('$comments comments'),
-              ],
+            Text(
+              title,
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
+            Text(
+              'by @$author',
+              style: Theme.of(context).textTheme.subtitle2,
+            ),
+            const SizedBox(height: 4.0),
+            Text(
+              '$points points • $comments comments',
+              style: Theme.of(context).textTheme.caption,
             ),
           ],
         ),
