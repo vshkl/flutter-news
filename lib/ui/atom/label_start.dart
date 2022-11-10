@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class StatsLabel extends StatelessWidget {
-  const StatsLabel({
+class LabelStats extends StatelessWidget {
+  const LabelStats({
     super.key,
     required this.pointsCount,
     required this.commentsCount,

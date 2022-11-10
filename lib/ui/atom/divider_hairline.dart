@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HairlineDivider extends StatelessWidget {
-  const HairlineDivider({super.key});
+class DividerHairline extends StatelessWidget {
+  const DividerHairline({super.key});
 
   @override
   Widget build(BuildContext context) {

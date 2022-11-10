@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ErrorRow extends StatelessWidget {
-  const ErrorRow({
+class RowError extends StatelessWidget {
+  const RowError({
     super.key,
     required this.error,
   });

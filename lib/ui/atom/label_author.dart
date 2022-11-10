@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AuthorLabel extends StatelessWidget {
-  const AuthorLabel({
+class LabelAuthor extends StatelessWidget {
+  const LabelAuthor({
     super.key,
     required this.username,
   });

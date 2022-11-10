@@ -6,11 +6,11 @@ import 'package:http/http.dart' as http;
 
 import '/model/news.dart';
 
-import '/ui/atom/hairline_divider.dart';
-import '/ui/molecule/error_row.dart';
-import '/ui/molecule/loading_indicator.dart';
-import '/ui/molecule/news_row.dart';
-import '/ui/molecule/no_results.dart';
+import '/ui/atom/divider_hairline.dart';
+import '/ui/molecule/row_error.dart';
+import '/ui/molecule/indicator_loading.dart';
+import '/ui/molecule/row_news.dart';
+import '/ui/molecule/view_no_results.dart';
 
 class NewsList extends StatefulWidget {
   const NewsList({super.key});
@@ -35,15 +35,15 @@ class _NewsListState extends State<NewsList> {
     return PaginationView<News>(
       key: key,
       itemBuilder: (BuildContext context, News news, int index) =>
-          NewsRow(news: news),
+          RowNews(news: news),
       separatorBuilder: (BuildContext context, int index) =>
-          const HairlineDivider(),
+          const DividerHairline(),
       pageFetch: fetchNews,
       pullToRefresh: true,
-      onError: (dynamic error) => ErrorRow(error: error),
-      onEmpty: const NoResults(),
-      bottomLoader: const LoadingIndicator(),
-      initialLoader: const LoadingIndicator(),
+      onError: (dynamic error) => RowError(error: error),
+      onEmpty: const ViewNoResults(),
+      bottomLoader: const IndicatorLoading(),
+      initialLoader: const IndicatorLoading(),
     );
   }
 }

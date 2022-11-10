@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_news/ui/atom/author_label.dart';
+import 'package:flutter_news/ui/atom/label_author.dart';
 
 import '/model/news.dart';
 
-import '/ui/atom/author_label.dart';
-import '/ui/atom/stats_label.dart';
+import '/ui/atom/label_author.dart';
+import '/ui/atom/label_start.dart';
 
-class NewsRow extends StatelessWidget {
-  const NewsRow({super.key, required this.news});
+class RowNews extends StatelessWidget {
+  const RowNews({super.key, required this.news});
 
   final News news;
 
@@ -28,15 +28,15 @@ class NewsRow extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               const SizedBox(height: 4.0),
-              AuthorLabel(username: news.author),
+              LabelAuthor(username: news.author),
               const SizedBox(height: 8.0),
-              StatsLabel(
+              LabelStats(
                 pointsCount: news.points,
                 commentsCount: news.comments,
               ),
             ],
           ),
-        )
+        ),
       ],
     );
   }
