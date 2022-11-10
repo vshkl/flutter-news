@@ -5,7 +5,12 @@ import 'package:pagination_view/pagination_view.dart';
 import 'package:http/http.dart' as http;
 
 import '/model/news.dart';
+
+import '/ui/atom/hairline_divider.dart';
+import '/ui/molecule/error_row.dart';
+import '/ui/molecule/loading_indicator.dart';
 import '/ui/molecule/news_row.dart';
+import '/ui/molecule/no_results.dart';
 
 class NewsList extends StatefulWidget {
   const NewsList({super.key});
@@ -32,21 +37,13 @@ class _NewsListState extends State<NewsList> {
       itemBuilder: (BuildContext context, News news, int index) =>
           NewsRow(news: news),
       separatorBuilder: (BuildContext context, int index) =>
-          const Divider(height: 0.0, color: Colors.grey),
+          const HairlineDivider(),
       pageFetch: fetchNews,
       pullToRefresh: true,
-      onError: (dynamic error) => Center(
-        child: Text('Error happened:\n$error'),
-      ),
-      onEmpty: const Center(
-        child: Text('No Flutter news found'),
-      ),
-      bottomLoader: const Center(
-        child: CircularProgressIndicator(),
-      ),
-      initialLoader: const Center(
-        child: CircularProgressIndicator(),
-      ),
+      onError: (dynamic error) => ErrorRow(error: error),
+      onEmpty: const NoResults(),
+      bottomLoader: const LoadingIndicator(),
+      initialLoader: const LoadingIndicator(),
     );
   }
 }
